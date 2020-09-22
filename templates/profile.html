@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+  {% block content %}
+
+<style>
+  .avatar.avatar-xl {
+      width: 5rem;
+      height: 5rem;
+  }
+  .avatar {
+      width: 2rem;
+      height: 2rem;
+      line-height: 2rem;
+      border-radius: 50%;
+      display: inline-block;
+      background: #ced4da no-repeat center/cover;
+      position: relative;
+      text-align: center;
+      color: #868e96;
+      font-weight: 600;
+      vertical-align: bottom;
+  }
+  .card {
+      background-color: #fff;
+      border: 0 solid #eee;
+      border-radius: 0;
+  }
+  .card {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.1), -1px 0 2px rgba(0,0,0,0.05);
+      box-shadow: 2px 2px 2px rgba(0,0,0,0.1), -1px 0 2px rgba(0,0,0,0.05);
+  }
+  .card-body {
+      padding: 1.25rem;
+  }
+</style>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-xl-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="media align-items-center"><img src="{{ user.profile.image.url }}" class="avatar avatar-xl mr-3">
+                <div class="media-body overflow-hidden">
+                  <h5 class="card-text mb-0">{{ user.username }}</h5>
+                  <br>
+                  <p class="card-text">
+
+                    {{ user.email }}<br>
+                  </p>
+                </div>
+              </div><a href="#" class="tile-link"></a>
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+
+    </div>
+
+
+  {% endblock content %}}
